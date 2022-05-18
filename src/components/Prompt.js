@@ -14,7 +14,7 @@ function Prompt() {
     if (promptVal.length) {
       const promptBody = {
         prompt: promptVal,
-        max_tokens: 48,
+        max_tokens: 64,
         temperature: 0.4
       }
       console.log(`trying API key ${process.env.REACT_APP_OPENAPI_KEY}`)
@@ -36,10 +36,12 @@ function Prompt() {
 
   return (
     <form id="prompt">
-      <label htmlFor="input">Enter your prompt:</label>
-      <textarea id="input" required minLength="1" rows="10" cols="55" value={promptVal} onChange={handleChange} />
-      <button type="submit" onClick={handleSubmit}>Submit</button>
-      <Results completions={completions} />
+      <fieldset id="input">
+        <legend>Enter your prompt:</legend>
+        <textarea required minLength="1" rows="10" cols="55" value={promptVal} onChange={handleChange} />
+        <button type="submit" onClick={handleSubmit}>Submit</button>
+      </fieldset>
+      <Results id="results" completions={completions} />
     </form>
   )
 }
