@@ -9,7 +9,7 @@
 /coverage
 
 # production (commented out so GitHub Pages can see it)
-# /docs
+/build
 
 # misc
 .DS_Store
